@@ -12,6 +12,10 @@ Then either run the following command to run the pre-compiled executable:
 ```
 3d.exe
 ```
+Or run the following command to compile the assembly file into the executable and run it using a batch file:
+```
+run
+```
 Or run the following commands to compile the assembly file into the executable and run it yourself:
 ```
 masm 3d.asm;
