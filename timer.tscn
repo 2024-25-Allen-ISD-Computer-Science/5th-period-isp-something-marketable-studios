@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://do656kufj2g42"]
+[gd_scene load_steps=7 format=3 uid="uid://do656kufj2g42"]
 
 [ext_resource type="Script" path="res://timer.gd" id="1_2xuv1"]
 [ext_resource type="AudioStream" uid="uid://dv4k7wl2vhton" path="res://beep-01a.mp3" id="2_s6bi6"]
+[ext_resource type="PackedScene" uid="uid://bxwu25xldpa11" path="res://bar.tscn" id="3_6lkv0"]
 
 [sub_resource type="Theme" id="Theme_umr2h"]
 default_font_size = 95
@@ -12,7 +13,7 @@ default_font_size = 140
 [sub_resource type="Theme" id="Theme_tganj"]
 default_font_size = 80
 
-[node name="Timer" type="Node2D"]
+[node name="timer" type="Node2D"]
 script = ExtResource("1_2xuv1")
 
 [node name="seconds" type="TextEdit" parent="."]
@@ -32,20 +33,23 @@ theme = SubResource("Theme_umr2h")
 placeholder_text = "minutes"
 
 [node name="header" type="RichTextLabel" parent="."]
-offset_right = 646.0
+offset_right = 451.0
 offset_bottom = 424.0
 theme = SubResource("Theme_j7fuq")
 text = "Timer"
 
 [node name="start" type="Button" parent="."]
 offset_left = 147.0
-offset_top = 943.0
+offset_top = 855.0
 offset_right = 497.0
-offset_bottom = 1128.0
+offset_bottom = 1040.0
 theme = SubResource("Theme_tganj")
 text = "START"
 
 [node name="beep" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_s6bi6")
+
+[node name="bar" parent="." instance=ExtResource("3_6lkv0")]
+position = Vector2(-1, 0)
 
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]

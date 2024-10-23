@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqpru8dr6trwm"]
+
+[ext_resource type="PackedScene" uid="uid://bxwu25xldpa11" path="res://bar.tscn" id="1_dejhf"]
+
+[node name="home" type="Node2D"]
+
+[node name="bar" parent="." instance=ExtResource("1_dejhf")]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 482.0
+offset_bottom = 182.0
+text = "home"
