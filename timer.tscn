@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://do656kufj2g42"]
+
+[ext_resource type="Script" path="res://timer.gd" id="1_2xuv1"]
+[ext_resource type="AudioStream" uid="uid://dv4k7wl2vhton" path="res://beep-01a.mp3" id="2_s6bi6"]
+
+[sub_resource type="Theme" id="Theme_umr2h"]
+default_font_size = 95
+
+[sub_resource type="Theme" id="Theme_j7fuq"]
+default_font_size = 140
+
+[sub_resource type="Theme" id="Theme_tganj"]
+default_font_size = 80
+
+[node name="Timer" type="Node2D"]
+script = ExtResource("1_2xuv1")
+
+[node name="seconds" type="TextEdit" parent="."]
+offset_left = 24.0
+offset_top = 612.0
+offset_right = 407.0
+offset_bottom = 762.0
+theme = SubResource("Theme_umr2h")
+placeholder_text = "seconds"
+
+[node name="minutes" type="TextEdit" parent="."]
+offset_left = 22.0
+offset_top = 442.0
+offset_right = 422.0
+offset_bottom = 592.0
+theme = SubResource("Theme_umr2h")
+placeholder_text = "minutes"
+
+[node name="header" type="RichTextLabel" parent="."]
+offset_right = 646.0
+offset_bottom = 424.0
+theme = SubResource("Theme_j7fuq")
+text = "Timer"
+
+[node name="start" type="Button" parent="."]
+offset_left = 147.0
+offset_top = 943.0
+offset_right = 497.0
+offset_bottom = 1128.0
+theme = SubResource("Theme_tganj")
+text = "START"
+
+[node name="beep" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_s6bi6")
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
